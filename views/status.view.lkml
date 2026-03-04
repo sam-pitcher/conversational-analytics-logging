@@ -32,7 +32,7 @@ view: status {
                 'Content to analyze: ', content
               ) AS prompt
             FROM
-              `sampitcher-playground.conversation_logs.interaction_logs`
+              ${interaction_logs.SQL_TABLE_NAME}
             WHERE {% incrementcondition %} timestamp {%  endincrementcondition %}
           ),
           STRUCT(

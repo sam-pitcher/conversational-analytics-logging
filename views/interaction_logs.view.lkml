@@ -49,7 +49,7 @@ view: interaction_logs {
       JSON_VALUE(raw_json, '$.systemMessage.chart.result.vegaConfig.title') AS chart_title
 
       FROM
-      `sampitcher-playground.conversation_logs.interaction_logs`
+      `conversation_logs.interaction_logs`
 
       ;;
   }
