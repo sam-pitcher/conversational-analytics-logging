@@ -3,7 +3,9 @@ project_name: "conversational_analytics_logging"
 application: conversation_analytics_app {
   label: "Conversation Analytics"
   # This points Looker to your local Vite dev server
-  url: "https://localhost:8080/bundle.js"
+  # url: "https://localhost:8080/bundle.js"
+
+  file: "bundle.js"
 
   entitlements: {
     # Allows the extension to make Looker API calls on behalf of the user
