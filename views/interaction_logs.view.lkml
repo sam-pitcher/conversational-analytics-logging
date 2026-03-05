@@ -249,6 +249,17 @@ view: interaction_logs {
     type: count
   }
 
+  measure: success_interaction_count {
+    type: count
+    filters: [status.status: "SUCCESS"]
+  }
+
+  measure: success_interaction_pct {
+    type: number
+    sql: safe_divide(${success_interaction_count}, ${interaction_count}) ;;
+    value_format_name: percent_1
+  }
+
   measure: interaction_duration {
     group_label: "Interaction Duration"
     type: sum

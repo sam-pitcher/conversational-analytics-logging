@@ -18,4 +18,16 @@ explore: interaction_logs {
     relationship: one_to_one
   }
 
+  join: user_query_embeddings {
+    type: left_outer
+    sql_on: ${interaction_logs.event_id} = ${user_query_embeddings.event_id} ;;
+    relationship: one_to_one
+  }
+
+  join: user_query_clusters {
+    type: left_outer
+    sql_on: ${user_query_clusters.event_id} = ${user_query_embeddings.event_id} ;;
+    relationship: one_to_one
+  }
+
 }

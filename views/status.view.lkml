@@ -12,7 +12,7 @@ view: status {
         JSON_VALUE(ml_generate_text_result, '$.candidates[0].content.parts[0].text') AS status
       FROM
         ML.GENERATE_TEXT(
-          MODEL `sampitcher-playground.conversation_logs.gemini_2_5_flash`,
+          MODEL `conversation_logs.gemini_2_5_flash`,
           (
             SELECT
               event_id,
@@ -76,7 +76,7 @@ view: status_missing_field {
         JSON_VALUE(ml_generate_text_result, '$.candidates[0].content.parts[0].text') AS missing_field
       FROM
         ML.GENERATE_TEXT(
-          MODEL `sampitcher-playground.conversation_logs.gemini_2_5_flash`,
+          MODEL `conversation_logs.gemini_2_5_flash`,
           (
             SELECT
               event_id,
